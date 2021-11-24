@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>All our flats</h2>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+    <% @flats.each do |f| %>
+      <div class="col mb-4">
+        <div class="card">
+          <img src="<%= f.picture_url %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= f.name %></h5>
+            <p class="card-text"><%= f.address %></p>
+            <div class="d-flex justify-content-between">
+              <div class="guest"><i class="fas fa-users"></i> <%= f.number_of_guests %></div>
+              <div class="price"><%= f.price_per_night %> <i class="fas fa-pound-sign"></i></div>
+            </div>
+          </div>
+          <div class="card-footer d-flex justify-content-between">
+            <%= link_to 'More info', flat_path(f)%>
+            <%= link_to 'Edit', edit_flat_path(f), style:"color: orange" %>
+            <%= link_to 'Remove', flat_path(f), style:"color: red", method: :delete, data: { confirm: "Are you sure?" }%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# https://source.unsplash.com/500x500/?house,interior %>
