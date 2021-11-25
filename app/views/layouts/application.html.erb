@@ -18,7 +18,7 @@
     <div class="nav-right d-flex text-right">
     <%= simple_form_for :search, url: flats_path, method: "GET", html: {
       class: 'form-inline' } do |f| %>
-      <%= f.input :name, input_html: {value: "" } , placeholder:'Search'%>
+      <%= f.input :name, input_html: {value: "" } , placeholder:'Search', label: false%>
       <%= f.submit "Search", class:"btn btn-outline-success mx-2" %>
     <% end %>
     <%= link_to 'Add Flat', new_flat_path, class:"btn btn-outline-primary mx-2"  %>
